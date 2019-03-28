@@ -1,6 +1,8 @@
 package com.example.myapplication.Home;
 
 import android.content.Context;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,6 +28,25 @@ public class HomeActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: starting.");
 
         setupBottomNavigationView();
+        setupViewPager();
+    }
+
+    /*
+     * Responsible for adding 3 tabs: Camera, Home, Messages
+     */
+    private void setupViewPager() {
+        SectionPageAdapter sectionPageAdapter = new SectionPageAdapter(getSupportFragmentManager());
+        sectionPageAdapter.addItem(new CameraFragment());       // index 0
+        sectionPageAdapter.addItem(new HomeFragment());         // index 1
+        sectionPageAdapter.addItem(new MessagesFragment());     // index 2
+        ViewPager viewPager = findViewById(R.id.container);
+        viewPager.setAdapter(sectionPageAdapter);
+
+        TabLayout tabLayout = findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_camera);            //camera icon
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_instagram_icon);    // instagram icon
+        tabLayout.getTabAt(2).setIcon(R.drawable.ic_arrow);             // messages icon
     }
 
     /*
