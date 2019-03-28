@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Profile;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -7,16 +7,17 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.myapplication.R;
 import com.example.myapplication.Utils.BottomNavigationViewHelper;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
-public class SharesActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
-    private Context mContext = SharesActivity.this;
+    private Context mContext = ProfileActivity.this;
 
-    private static final String TAG = "SharesActivity";
+    private static final String TAG = "ProfileActivity";
 
-    private static final int ACTIVITY_NUM = 2;
+    private static final int ACTIVITY_NUM = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

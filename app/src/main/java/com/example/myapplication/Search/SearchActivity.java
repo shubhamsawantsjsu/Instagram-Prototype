@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Search;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.myapplication.R;
 import com.example.myapplication.Utils.BottomNavigationViewHelper;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 

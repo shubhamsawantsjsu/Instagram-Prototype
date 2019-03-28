@@ -1,22 +1,23 @@
-package com.example.myapplication;
+package com.example.myapplication.Likes;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.myapplication.R;
 import com.example.myapplication.Utils.BottomNavigationViewHelper;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
-public class HomeActivity extends AppCompatActivity {
+public class LikesActivity extends AppCompatActivity {
 
-    private static final String TAG = "HomeActivity";
+    private Context mContext = LikesActivity.this;
 
-    private static final int ACTIVITY_NUM = 0;
+    private static final String TAG = "LikesActivity";
 
-    private Context mContext = HomeActivity.this;
+    private static final int ACTIVITY_NUM = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

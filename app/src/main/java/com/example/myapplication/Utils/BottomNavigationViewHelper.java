@@ -7,12 +7,12 @@ import android.support.design.widget.BottomNavigationView;
 import android.util.Log;
 import android.view.MenuItem;
 
-import com.example.myapplication.HomeActivity;
-import com.example.myapplication.LikesActivity;
-import com.example.myapplication.ProfileActivity;
+import com.example.myapplication.Home.HomeActivity;
+import com.example.myapplication.Likes.LikesActivity;
+import com.example.myapplication.Profile.ProfileActivity;
 import com.example.myapplication.R;
-import com.example.myapplication.SearchActivity;
-import com.example.myapplication.SharesActivity;
+import com.example.myapplication.Search.SearchActivity;
+import com.example.myapplication.Share.SharesActivity;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 public class BottomNavigationViewHelper {

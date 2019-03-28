@@ -1,22 +1,23 @@
-package com.example.myapplication;
+package com.example.myapplication.Home;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.myapplication.R;
 import com.example.myapplication.Utils.BottomNavigationViewHelper;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
-public class ProfileActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
-    private Context mContext = ProfileActivity.this;
+    private static final String TAG = "HomeActivity";
 
-    private static final String TAG = "ProfileActivity";
+    private static final int ACTIVITY_NUM = 0;
 
-    private static final int ACTIVITY_NUM = 4;
+    private Context mContext = HomeActivity.this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
