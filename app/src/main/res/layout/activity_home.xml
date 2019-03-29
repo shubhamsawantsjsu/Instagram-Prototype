@@ -7,11 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".Home.HomeActivity">
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!--- Top toolbar -->
+
+        <!-- top toolbar -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,20 +23,24 @@
 
         </RelativeLayout>
 
-        <!--- Middle Section Body -->
+        <!-- Middle section (body) -->
         <RelativeLayout
-            android:id="@+id/relLayout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/relLayout1"
-            android:layout_marginTop="-1dp">
+            android:id="@+id/relLayout2"
+            android:layout_below="@+id/relLayout1">
 
-            <include layout="@layout/layout_center_viewpager" />
+            <include layout="@layout/layout_center_viewpager"/>
+
 
         </RelativeLayout>
 
-        <!--- Bottom Navigation -->
+
+        <!-- bottom navigation -->
         <include layout="@layout/layout_bottom_navigation_view"/>
+
+
     </RelativeLayout>
+
 
 </android.support.design.widget.CoordinatorLayout>
