@@ -12,7 +12,6 @@ import android.widget.ImageView;
 
 import com.example.myapplication.R;
 import com.example.myapplication.Utils.UniversalImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class EditProfileFragment extends Fragment {
 
@@ -26,15 +25,19 @@ public class EditProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_editprofile, container, false);
         mProfilePhoto = view.findViewById(R.id.profile_photo);
 
-        initImageLoader();
+        //backArrow for navigating back to "ProfileActivity"
+        ImageView backArrow = view.findViewById(R.id.backArrow);
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: navigating back to profile activity");
+                getActivity().finish();
+            }
+        });
+
         setProfileImage();
 
         return view;
-    }
-
-    private void initImageLoader() {
-        UniversalImageLoader universalImageLoader  = new UniversalImageLoader(getActivity());
-        ImageLoader.getInstance().init(universalImageLoader.getConfig());
     }
 
     private void setProfileImage() {

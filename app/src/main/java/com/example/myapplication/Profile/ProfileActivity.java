@@ -9,12 +9,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.example.myapplication.R;
 import com.example.myapplication.Utils.BottomNavigationViewHelper;
+import com.example.myapplication.Utils.GridImageAdapter;
+import com.example.myapplication.Utils.UniversalImageLoader;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+
+import java.util.ArrayList;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -24,7 +29,11 @@ public class ProfileActivity extends AppCompatActivity {
 
     private static final int ACTIVITY_NUM = 4;
 
+    private static final int NUM_GRID_COLUMNS = 3;
+
     private ProgressBar mProgressBar;
+
+    private ImageView profilePhoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +42,42 @@ public class ProfileActivity extends AppCompatActivity {
 
         Log.d(TAG, "onCreate: starting.");
 
-        mProgressBar = findViewById(R.id.profileProgressBar);
-        mProgressBar.setVisibility(View.GONE);
         setupBottomNavigationView();
         setupToolbar();
+        setupActivityWidgets();
+        setProfileImage();
+
+        tempGridSetup();
+    }
+
+    private void setupImageGrid(ArrayList<String> imageURLs) {
+        GridView gridView = findViewById(R.id.gridView);
+
+        int gridWidth = getResources().getDisplayMetrics().widthPixels;
+        int imageWidth = gridWidth/NUM_GRID_COLUMNS;
+        gridView.setColumnWidth(imageWidth);
+
+        GridImageAdapter adapter = new GridImageAdapter(mContext, R.layout.layout_grid_image_view, "", imageURLs);
+        gridView.setAdapter(adapter);
+    }
+
+    private void tempGridSetup() {
+        ArrayList<String> imageURLs = new ArrayList<>();
+        imageURLs.add("https://crackberry.com/sites/crackberry.com/files/styles/large/public/topic_images/2013/ANDROID.png?itok=xhm7jaxS");
+        imageURLs.add("https://crackberry.com/sites/crackberry.com/files/styles/large/public/topic_images/2013/ANDROID.png?itok=xhm7jaxS");
+        imageURLs.add("https://crackberry.com/sites/crackberry.com/files/styles/large/public/topic_images/2013/ANDROID.png?itok=xhm7jaxS");
+        imageURLs.add("https://crackberry.com/sites/crackberry.com/files/styles/large/public/topic_images/2013/ANDROID.png?itok=xhm7jaxS");
+        imageURLs.add("https://crackberry.com/sites/crackberry.com/files/styles/large/public/topic_images/2013/ANDROID.png?itok=xhm7jaxS");
+        imageURLs.add("https://crackberry.com/sites/crackberry.com/files/styles/large/public/topic_images/2013/ANDROID.png?itok=xhm7jaxS");
+        imageURLs.add("https://crackberry.com/sites/crackberry.com/files/styles/large/public/topic_images/2013/ANDROID.png?itok=xhm7jaxS");
+        imageURLs.add("https://crackberry.com/sites/crackberry.com/files/styles/large/public/topic_images/2013/ANDROID.png?itok=xhm7jaxS");
+        imageURLs.add("https://crackberry.com/sites/crackberry.com/files/styles/large/public/topic_images/2013/ANDROID.png?itok=xhm7jaxS");
+        imageURLs.add("https://crackberry.com/sites/crackberry.com/files/styles/large/public/topic_images/2013/ANDROID.png?itok=xhm7jaxS");
+        imageURLs.add("https://crackberry.com/sites/crackberry.com/files/styles/large/public/topic_images/2013/ANDROID.png?itok=xhm7jaxS");
+        imageURLs.add("https://crackberry.com/sites/crackberry.com/files/styles/large/public/topic_images/2013/ANDROID.png?itok=xhm7jaxS");
+
+        setupImageGrid(imageURLs);
+
     }
 
     private void setupToolbar() {
@@ -54,6 +95,19 @@ public class ProfileActivity extends AppCompatActivity {
         });
     }
 
+    private void setProfileImage() {
+        Log.d(TAG, "setProfileImage: setting profile photo");
+        String imageURL = "crackberry.com/sites/crackberry.com/files/styles/large/public/topic_images/2013/ANDROID.png?itok=xhm7jaxS";
+
+        UniversalImageLoader.setImage(imageURL, profilePhoto, null, "https://");
+    }
+    
+    private void setupActivityWidgets() {
+        mProgressBar = findViewById(R.id.profileProgressBar);
+        mProgressBar.setVisibility(View.GONE);
+
+        profilePhoto = findViewById(R.id.profile_photo);
+    }
     /*
      * Bottom Navigation Setup
      */

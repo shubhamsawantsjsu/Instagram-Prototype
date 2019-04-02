@@ -11,7 +11,9 @@ import android.view.MenuItem;
 
 import com.example.myapplication.R;
 import com.example.myapplication.Utils.BottomNavigationViewHelper;
+import com.example.myapplication.Utils.UniversalImageLoader;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -27,6 +29,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         Log.d(TAG, "onCreate: starting.");
 
+        initImageLoader();
         setupBottomNavigationView();
         setupViewPager();
     }
@@ -60,5 +63,10 @@ public class HomeActivity extends AppCompatActivity {
         Menu menu = bottomNavigationViewEx.getMenu();
         MenuItem item = menu.getItem(ACTIVITY_NUM);
         item.setChecked(true);
+    }
+
+    private void initImageLoader() {
+        UniversalImageLoader universalImageLoader  = new UniversalImageLoader(mContext);
+        ImageLoader.getInstance().init(universalImageLoader.getConfig());
     }
 }
