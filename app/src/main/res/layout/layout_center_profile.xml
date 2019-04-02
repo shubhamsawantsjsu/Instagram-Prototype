@@ -10,12 +10,10 @@
         android:id="@+id/relLayout1">
 
         <include layout="@layout/snippet_top_profilebar"/>
-
     </RelativeLayout>
 
 
     <!-- ****************** Middle Section ******************** -->
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -111,8 +109,6 @@
                 android:gravity="center"
                 android:horizontalSpacing="1dp"
                 android:stretchMode="columnWidth">
-
-
             </GridView>
         </RelativeLayout>
 
